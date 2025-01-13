@@ -2,6 +2,7 @@ package src;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -32,13 +33,13 @@ public class Controller {
 			loadKey(2);
 		}
 		
-		saveKey(keys.get(1), 1);
-		saveKey(keys.get(2), 2);
+		saveKey(1);
+		saveKey(2);
 		
 		
 	}
 	
-	private void newKey(Integer keyNumber) {
+	public void newKey(Integer keyNumber) {
 		List<String> baseCharList = new ArrayList<>(Arrays.asList(baseChars.split("")));
 		List<String> fullCharList = new ArrayList<>(Arrays.asList(fullChars.split("")));
 		String currentChar = null;
@@ -62,16 +63,19 @@ public class Controller {
 		}
 	}
 	
-	private void saveKey(HashMap<String, String> key, int keyNumber) {
-		ArrayList<String> keys = new ArrayList<>(key.keySet());
+	public void saveKey(int keyNumber) {
+		HashMap<String, String> key = keys.get(keyNumber);
+		ArrayList<String> keysSet = new ArrayList<>(key.keySet());
 		ArrayList<String> values = new ArrayList<>();
 		ArrayList<String> keyToSave = new ArrayList<>();
 		for(int i = 0; i < key.size(); i++) {
-			values.add(key.get(keys.get(i)));
+			values.add(key.get(keysSet.get(i)));
 		}
 		for(int i = 0; i < key.size(); i++) {
-			keyToSave.add(keys.get(i) + "," + values.get(i));
+			keyToSave.add(keysSet.get(i) + "," + values.get(i));
 		}
+		
+		keysDAO.saveKey(keyToSave, keyNumber);
 		
 		
 	}
@@ -129,6 +133,19 @@ public class Controller {
 		}
 		
 		return buffer.toString();
+	}
+	
+	public void resetKeys() {
+		newKey(1);
+		newKey(2);
+		saveKey(1);
+		saveKey(2);
+	}
+	
+	public boolean saveKeysTo(File fileWhereToSave) {
+		String path = fileWhereToSave.getPath();
+		boolean saveOk = keysDAO.saveTo(path);
+		return saveOk;
 	}
 	
 }

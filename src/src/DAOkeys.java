@@ -88,4 +88,65 @@ public class DAOkeys {
 			e.printStackTrace();
 		}
 	}
+	
+	public boolean saveTo(String filePath) {
+		boolean saveOk = true;
+		FileWriter writer = null;
+		ArrayList<String> key1 = loadKey(1);
+		ArrayList<String> key2 = loadKey(2);
+		String keyPath1 = "/Password Key 1.txt";
+		String keyPath2 = "/Password Key 2.txt";
+		File file1 = new File(filePath + keyPath1);
+		File file2 = new File(filePath + keyPath2);
+		try {
+			file1.createNewFile();
+			file2.createNewFile();
+		}catch(IOException e) {
+			e.printStackTrace();
+			saveOk = false;
+			
+		}
+		
+		try {
+			writer = new FileWriter(file1);
+			for(int i = 0; i < key1.size(); i++) {
+				writer.write(key1.get(i) + "\n");
+			}
+		}catch(IOException e) {
+			e.printStackTrace();
+			saveOk = false;
+		}
+		
+		
+		if(writer != null) {
+			try {
+				writer.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+		try {
+			writer = new FileWriter(file2);
+			for(int i = 0; i < key2.size(); i++) {
+				writer.write(key2.get(i) + "\n");
+			}
+		}catch(IOException e) {
+			e.printStackTrace();
+			saveOk = false;
+		}
+		
+		if(writer != null) {
+			try {
+				writer.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return saveOk;
+		
+	}
+	
 }
