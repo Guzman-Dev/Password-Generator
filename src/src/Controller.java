@@ -1,7 +1,5 @@
 package src;
 
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -80,9 +78,9 @@ public class Controller {
 		
 	}
 	
-	public Boolean codePassword(String rawPassword) {
+	public String codePassword(String rawPassword) {
 		if(rawPassword.isBlank()) {
-			return false;
+			return "";
 		}
 		StringBuffer buffer = new StringBuffer();
 		String passwordToSplit = rawPassword.trim().replaceAll("\\W", "");
@@ -102,8 +100,7 @@ public class Controller {
 		
 		buffer.append(checkConditions(buffer.toString()));
 		
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(buffer.toString()), null);
-		return true;
+		return buffer.toString();
 	}
 	
 	private String checkConditions(String passwordToCheck) {
