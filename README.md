@@ -16,10 +16,17 @@ Yes! To do so you need to press the "Reset Encryption Keys" ![Image](https://git
 >If you are already using another generated password with this set of keys you will need to either:
 >Save the safe password somewhere OR Change to a password generated with the new keys in whatever accounts you used it before.
 ## Im changing PCs, ¿How do i get access to the same passwords i got in my previous pc?
-You can import the encryption keys into the new PC.
-Press the "Export encryption keys" button ![Image](https://github.com/user-attachments/assets/f8b527f1-cccd-4841-9d83-c63706916294) and select a folder where the keys will be exported to, then move the exported keys into a folder in your new PC,
-
-preferably a folder that is easy to find, like in desktop for example,
-
+You can import the encryption keys into the new PC.  
+Press the "Export encryption keys" button ![Image](https://github.com/user-attachments/assets/f8b527f1-cccd-4841-9d83-c63706916294) and select a folder where the keys will be exported to,  
+then move the exported keys into a folder in your new PC, preferably a folder that is easy to find, like in desktop for example,  
 finally, on the new PC press the "Import encryption keys button" ![Image](https://github.com/user-attachments/assets/b7cefeff-d135-4106-a382-db24361d5943) and select BOTH keys, then press import.
+
+
+### I liked your application, ¿Is there a way to donate?
+Yes there is! 
+
+<a href='https://ko-fi.com/N4N119CSTH' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+
+
 
