@@ -1,11 +1,14 @@
 package src;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
+import java.util.Set;
 
 public class Controller {
 	private String baseChars = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890";
@@ -143,6 +146,70 @@ public class Controller {
 		String path = fileWhereToSave.getPath();
 		boolean saveOk = keysDAO.saveTo(path);
 		return saveOk;
+	}
+	
+	public boolean checkKeyNames(File[] files) {
+		String fileName1 = files[0].getName();
+		String fileName2 = files[1].getName();
+		if(!Set.of("Password Key 1.txt", "Password Key 2.txt").contains(fileName1)) {
+			return false;
+		}
+		if(!Set.of("Password Key 1.txt", "Password Key 2.txt").contains(fileName2)) {
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean importKeys(File[] files) throws Exception{
+		Scanner reader = null;
+		File[] orderedFiles = orderFiles(files);
+		ArrayList<String> key1 = new ArrayList<>();
+		ArrayList<String> key2 = new ArrayList<>();
+		try {
+			reader = new Scanner(orderedFiles[0]);
+			while(reader.hasNextLine()) {
+				key1.add(reader.nextLine());
+			}
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			reader = new Scanner(orderedFiles[1]);
+			while(reader.hasNextLine()) {
+				key2.add(reader.nextLine());
+			}
+		}catch(IOException e) {
+			e.printStackTrace();
+			
+		}
+		
+		if(reader != null) {
+			try {
+				reader.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		keysDAO.saveKey(key1, 1);
+		keysDAO.saveKey(key2, 2);
+		loadKey(1);
+		loadKey(2);
+		return true;
+	}
+	
+	private File[] orderFiles(File[] files) {
+		File[] orderedFiles = new File[2];
+		if(files[0].getName().equals("Password Key 1.txt")) {
+			orderedFiles[0] = files[0];
+			orderedFiles[1] = files[1];
+			return orderedFiles;
+		}else {
+			orderedFiles[0] = files[1];
+			orderedFiles[1] = files[0];
+			return orderedFiles;
+		}
 	}
 	
 }

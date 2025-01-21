@@ -149,4 +149,11 @@ public class DAOkeys {
 		
 	}
 	
+	public boolean importKeys(File[] files) {
+		boolean importOk = true;
+		
+		
+		return importOk;
+	}
+	
 }
