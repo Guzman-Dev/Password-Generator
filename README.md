@@ -9,7 +9,7 @@ To get a secure password you will need to enter a simple password/key of your ch
 >[!NOTE]
 >If you enter spaces or special characters the app will ignore them and generate a password with the characters supported (Lowercase/Uppercase letters, and Numbers).
 ## ¿How it works?
-Every time you enter a simple password the app will convert all the characters in it into a more safe password thanks to encryption keys generated on the first time you open the app.
+Every time you enter a simple password the app will convert all the characters in it into a more safe password thanks to encryption keys randomly generated on the first time you open the app.
 ## I don't like the password the app gave me, ¿Can i change it?
 Yes! To do so you need to press the "Reset Encryption Keys" ![Image](https://github.com/user-attachments/assets/87c1cd9b-e05f-481f-8a42-2b53485e24db) and it will generate new encryption keys.
 >[!NOTE]
