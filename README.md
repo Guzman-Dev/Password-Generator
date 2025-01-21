@@ -19,7 +19,7 @@ Yes! To do so you need to press the "Reset Encryption Keys" ![Image](https://git
 You can import the encryption keys into the new PC.
 Press the "Export encryption keys" button ![Image](https://github.com/user-attachments/assets/f8b527f1-cccd-4841-9d83-c63706916294) and select a folder where the keys will be exported to, then move the exported keys into a folder in your new PC,
 
-preferably a folder with public permissions, like in the desktop for example,
+preferably a folder that is easy to find, like in desktop for example,
 
 finally, on the new PC press the "Import encryption keys button" ![Image](https://github.com/user-attachments/assets/b7cefeff-d135-4106-a382-db24361d5943) and select BOTH keys, then press import.
 
