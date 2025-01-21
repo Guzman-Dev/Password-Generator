@@ -11,13 +11,15 @@ To get a safer password you will need to enter a simple password/key of your cho
 ## ¿How it works?
 Every time you enter a simple password the app will convert all the characters in it into a more safe password thanks to encryption keys generated on the first time you open the app.
 ## I don't like the password the app gave me, ¿Can i change it?
-Yes! To do so you need to press the "Reset Encryption Keys" button(The spinning arrow) and it will generate new encryption keys.
+Yes! To do so you need to press the "Reset Encryption Keys" ![Image](https://github.com/user-attachments/assets/87c1cd9b-e05f-481f-8a42-2b53485e24db) and it will generate new encryption keys.
 >[!NOTE]
 >If you are already using another generated password with this set of keys you will need to either:
 >Save the safe password somewhere OR Change to a password generated with the new keys in whatever accounts you used it before.
-## Im changing PC, ¿How do i get access to the same passwords i got in my previous pc?
-You can copy the encryption keys from the old pc into the new one.
-Press the "Export encryption keys" button(The file with an Upwards arrow) and select a folder where the keys will be exported to, then copy and replace both encryption keys into "Documents/Password Creator Keys/" on your new PC.
->[!IMPORTANT]
->To have the folder generated in your new pc you will have to open the app in the new pc atleast once.
+## Im changing PCs, ¿How do i get access to the same passwords i got in my previous pc?
+You can import the encryption keys into the new PC.
+Press the "Export encryption keys" button ![Image](https://github.com/user-attachments/assets/f8b527f1-cccd-4841-9d83-c63706916294) and select a folder where the keys will be exported to, then move the exported keys into a folder in your new PC,
+
+preferably a folder with public permissions, like in the desktop for example,
+
+finally, on the new PC press the "Import encryption keys button" ![Image](https://github.com/user-attachments/assets/b7cefeff-d135-4106-a382-db24361d5943) and select BOTH keys, then press import.
 
