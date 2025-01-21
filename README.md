@@ -4,7 +4,7 @@ The purpose of this application is to have easy access to a more complicated pas
 
 ¿Have you ever wanted to have more secure passwords but you can't remember them and don't want the saved somewhere other than your mind? With this app you can access to them from an easy to remember password!
 ## ¿How do i use it?
-To get a secure password you will need to enter a simple password/key of your choice (only lowercase and uppercase letters and numbers) which will be converted into a more safe password to use wherever you want.
+To get a secure password you will need to enter a simple password/key of your choice (only lowercase/uppercase letters and numbers) which will be converted into a more safe password to use wherever you want.
 
 >[!NOTE]
 >If you enter spaces or special characters the app will ignore them and generate a password with the characters supported (Lowercase and Uppercase letters, Numbers).
