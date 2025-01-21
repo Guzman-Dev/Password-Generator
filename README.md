@@ -22,7 +22,7 @@ then move the exported keys into a folder in your new PC, preferably a folder th
 finally, on the new PC press the "Import encryption keys button" ![Image](https://github.com/user-attachments/assets/b7cefeff-d135-4106-a382-db24361d5943) and select BOTH keys, then press import.
 
 
-### I liked your application, ¿Is there a way to donate?
+## I liked your application, ¿Is there a way to donate?
 Yes there is! 
 
 <a href='https://ko-fi.com/N4N119CSTH' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
