@@ -29,8 +29,8 @@ Yes! To do so you need to press the "Reset Encryption Keys" ![Image](https://git
 >Save the secure password somewhere OR Change to a password generated with the new keys in whatever accounts you used it before.
 ## Im changing PCs, ¿How do i get access to the same passwords i got in my previous pc?
 You can import the encryption keys into the new PC.  
-Press the "Export encryption keys" button ![Image](https://github.com/user-attachments/assets/f8b527f1-cccd-4841-9d83-c63706916294) and select a folder where the keys will be exported to,
-![Gif showing how to export keys](https://github.com/Guzman-Dev/RandomThings/blob/main/Exporting%20Keys.gif)
+Press the "Export encryption keys" button ![Image](https://github.com/user-attachments/assets/f8b527f1-cccd-4841-9d83-c63706916294) and select a folder where the keys will be exported to,<br/>
+![Gif showing how to export keys](https://github.com/Guzman-Dev/RandomThings/blob/main/Exporting%20Keys.gif)<br/>
 then move the exported keys into a folder in your new PC, preferably a folder that is easy to find, like in desktop for example,  
 finally, on the new PC press the "Import encryption keys" button ![Image](https://github.com/user-attachments/assets/b7cefeff-d135-4106-a382-db24361d5943) and select BOTH keys, then press import.
 ![Gif showing how to import keys](https://github.com/Guzman-Dev/RandomThings/blob/main/Importing%20Keys.gif)
