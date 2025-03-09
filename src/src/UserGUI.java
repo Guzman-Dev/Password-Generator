@@ -26,12 +26,16 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class UserGUI extends JFrame implements ActionListener {
 	
+	String code = "";
+	Boolean showing = false;
+	
 	private Controller appController = new Controller();
 	private JPasswordField passwordField = new JPasswordField();
 	
 	private JLabel label = new JLabel();
 	private JLabel label2 = new JLabel();
 	private JLabel passwordLabel = new JLabel();
+	private JLabel hiddenLabel = new JLabel();
 	
 	private JPanel panel1 = new JPanel();
 	private JPanel panel2 = new JPanel();
@@ -44,6 +48,7 @@ public class UserGUI extends JFrame implements ActionListener {
 	private JButton exportButton = new JButton();
 	private JButton importButton = new JButton();
 	private JButton copyButton = new JButton();
+	private JButton toggleButton = new JButton();
 	
 	private JFileChooser fc = new JFileChooser();
 	private JFileChooser fileImporter = new JFileChooser();
@@ -94,6 +99,13 @@ public class UserGUI extends JFrame implements ActionListener {
 		passwordLabel.setPreferredSize(new Dimension(150, 50));
 		safePasswordPanel.add(passwordLabel, BorderLayout.CENTER);
 		
+		toggleButton.setText("Show");
+		toggleButton.setPreferredSize(new Dimension(80, 37));
+		toggleButton.addActionListener(this);
+		toggleButton.setBorder(BorderFactory.createSoftBevelBorder(0));
+		toggleButton.setVisible(false);
+		safePasswordPanel.add(toggleButton);
+		
 		
 		copyButton.setText("Copy");
 		copyButton.setPreferredSize(new Dimension(80, 37));
@@ -101,6 +113,9 @@ public class UserGUI extends JFrame implements ActionListener {
 		copyButton.setBorder(BorderFactory.createSoftBevelBorder(0));
 		copyButton.setVisible(false);
 		safePasswordPanel.add(copyButton, BorderLayout.EAST);
+		
+		
+		
 		
 		panel1.setAlignmentX(CENTER_ALIGNMENT);
 		panel1.setPreferredSize(new Dimension(300, 50));
@@ -148,7 +163,7 @@ public class UserGUI extends JFrame implements ActionListener {
 		this.setIconImage(icon.getImage());
 		this.setTitle("Password creator");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(400, 250);
+		this.setSize(500, 250);
 		this.setResizable(false);
 			
 		/*GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -168,7 +183,7 @@ public class UserGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == createButton) {
 			String simplePassword = String.valueOf(passwordField.getPassword());
-			String code = appController.codePassword(simplePassword);
+			code = appController.codePassword(simplePassword);
 			if(code.equals("")) {
 				label.setText("The password entered is empty");
 				label.setForeground(Color.red);
@@ -181,17 +196,21 @@ public class UserGUI extends JFrame implements ActionListener {
 				
 				
 			}else {
+				showing = false;
+				toggleButton.setText("Show");
 				label2.setText("New Password:");
-				passwordLabel.setText(code);
+				passwordLabel.setText("HIDDEN");
+				hiddenLabel.setText(code);
 				label2.setForeground(new Color(3, 105, 27));
 				passwordLabel.setForeground(new Color(3, 105, 27));
 				copyButton.setVisible(true);
+				toggleButton.setVisible(true);
 			}
 			
 		}
 		
 		if(e.getSource() == copyButton) {
-			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(passwordLabel.getText()), null);
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(hiddenLabel.getText()), null);
 		}
 		
 		
@@ -281,6 +300,18 @@ public class UserGUI extends JFrame implements ActionListener {
 						JOptionPane.showMessageDialog(this, "Keys imported succesfully", "Import completed", JOptionPane.PLAIN_MESSAGE);
 					}
 				}
+			}
+		}
+		
+		if (e.getSource() == toggleButton) {
+			if(!showing) {
+				passwordLabel.setText(code);
+				showing = true;
+				toggleButton.setText("Hide");
+			}else {
+				passwordLabel.setText("HIDDEN");
+				showing = false;
+				toggleButton.setText("Show");
 			}
 		}
 		
